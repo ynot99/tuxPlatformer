@@ -61,12 +61,12 @@ int main()
 
       sf::Vector2f direction;
               
-      // Collider playerCollider = player.GetCollider();
-      // for(Platform& platform : platforms) {
-      //    if(platform.GetCollider().CheckCollision(playerCollider, direction, 1.f)) {
-      //       player.OnCollision(direction);
-      //    }
-      // }
+      Collider playerCollider = player.GetCollider();
+      for(Platform& platform : platforms) {
+         if(platform.GetCollider().CheckCollision(playerCollider, direction, 1.f)) {
+            player.OnCollision(direction);
+         }
+      }
 
       view.setCenter(player.GetPosition());
 
